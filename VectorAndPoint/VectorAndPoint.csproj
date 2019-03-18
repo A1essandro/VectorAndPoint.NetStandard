@@ -7,6 +7,11 @@
     <Authors>Alexander Yermakov</Authors>
     <Product />
     <Description>Vector, Vector3D, Point and Point3D for netstandard1.3</Description>
+    <PackageProjectUrl>https://github.com/A1essandro/VectorAndPoint.NetStandard</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/A1essandro/VectorAndPoint.NetStandard/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/A1essandro/VectorAndPoint.NetStandard</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>vector, vector3d, point, point3d</PackageTags>
   </PropertyGroup>
 
 </Project>
