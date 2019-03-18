@@ -72,7 +72,7 @@ namespace VectorAndPoint.ValTypes
             if (obj == null)
                 return false;
             if (obj is I3D<double>) return Equals(obj as I3D<double>);
-            if (obj is Point) return Equals((obj as Point?).Value); //hint
+            if (obj is Point) return Equals((obj as Point?).Value);
 
             return GetHashCode() == obj.GetHashCode();
         }
