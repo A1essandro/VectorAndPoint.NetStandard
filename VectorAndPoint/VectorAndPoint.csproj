@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageId>VectorAndPoint.NetStandard</PackageId>
+    <Authors>Alexander Yermakov</Authors>
+    <Product />
+    <Description>Vector, Vector3D, Point and Point3D for netstandard1.3</Description>
+  </PropertyGroup>
+
+</Project>
