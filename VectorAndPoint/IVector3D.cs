@@ -10,5 +10,7 @@ namespace VectorAndPoint
 
         double GetScalarProductWith(IVector3D<T> other);
 
+        double GetAngleWith(IVector3D<T> other);
+
     }
 }

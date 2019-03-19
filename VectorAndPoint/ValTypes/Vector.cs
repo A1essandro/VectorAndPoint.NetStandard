@@ -39,6 +39,8 @@ namespace VectorAndPoint.ValTypes
 
         public double GetScalarProductWith(IVector2D<double> other) => GetScalarProduct(this, other);
 
+        public double GetAngleWith(IVector2D<double> other) => GetAngleBetween(this, other);
+
         #region static
 
         public static bool IsEquals(IVector2D<double> v1, IVector2D<double> v2) => v1.X == v2.X && v1.Y == v2.Y;
@@ -52,6 +54,16 @@ namespace VectorAndPoint.ValTypes
         public static double GetScalarProduct(IVector2D<double> v1, IVector2D<double> v2) => v1.X * v2.X + v1.Y * v2.Y;
 
         public static double GetScalarProduct(Vector v1, Vector v2) => v1.X * v2.X + v1.Y * v2.Y; //without boxing
+
+        public static double GetAngleBetween(IVector2D<double> v1, IVector2D<double> v2)
+        {
+            return Math.Acos(GetScalarProduct(v1, v2) / (v1.Length * v2.Length));
+        }
+
+        public static double GetAngleBetween(Vector v1, Vector v2) //without boxing
+        {
+            return Math.Acos(GetScalarProduct(v1, v2) / (v1.Length * v2.Length));
+        }
 
         #endregion
 

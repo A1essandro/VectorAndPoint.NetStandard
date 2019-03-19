@@ -52,5 +52,23 @@ namespace Tests
             Assert.Equal(res, v1 + v2);
         }
 
+        [Fact]
+        public void ScalarMultipleTest()
+        {
+            var v1 = new Vector(1, 1);
+            var v2 = new Vector(1, 0);
+
+            Assert.Equal(1, v1.GetScalarProductWith(v2));
+        }
+
+        [Fact]
+        public void AngleTest()
+        {
+            var v1 = new Vector(0, 1);
+            var v2 = new Vector(1, 0);
+
+            Assert.Equal(Math.PI / 2, v1.GetAngleWith(v2));
+        }
+
     }
 }
