@@ -35,15 +35,23 @@ namespace VectorAndPoint.ValTypes
         /// </summary>
         public double Length => Point.GetRangeBetween(new Point(X, Y), new Point(0, 0));
 
-        public bool IsCollinearWith(IVector2D<double> vector) => X / vector.X == Y / vector.Y;
+        public bool IsCollinearWith(IVector2D<double> other) => IsCollinear(this, other);
+
+        public double GetScalarProductWith(IVector2D<double> other) => GetScalarProduct(this, other);
 
         #region static
 
         public static bool IsEquals(IVector2D<double> v1, IVector2D<double> v2) => v1.X == v2.X && v1.Y == v2.Y;
 
-        public static bool IsEquals(Vector v1, Vector v2) => v1.X == v2.X && v1.Y == v2.Y;
+        public static bool IsEquals(Vector v1, Vector v2) => v1.X == v2.X && v1.Y == v2.Y; //without boxing
 
         public static bool IsCollinear(IVector2D<double> v1, IVector2D<double> v2) => v1.X / v2.X == v1.Y / v2.Y;
+
+        public static bool IsCollinear(Vector v1, Vector v2) => v1.X / v2.X == v1.Y / v2.Y; //without boxing
+
+        public static double GetScalarProduct(IVector2D<double> v1, IVector2D<double> v2) => v1.X * v2.X + v1.Y * v2.Y;
+
+        public static double GetScalarProduct(Vector v1, Vector v2) => v1.X * v2.X + v1.Y * v2.Y; //without boxing
 
         #endregion
 

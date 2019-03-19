@@ -44,13 +44,21 @@ namespace VectorAndPoint.ValTypes
 
         public bool IsCollinearWith(IVector3D<double> vector) => IsCollinear(this, vector);
 
+        public double GetScalarProductWith(IVector3D<double> other) => GetScalarProduct(this, other);
+
         #region static
 
         public static bool IsEquals(IVector3D<double> v1, IVector3D<double> v2) => v1.X == v2.X && v1.Y == v2.Y && v1.Z == v2.Z;
 
-        public static bool IsEquals(Vector3D v1, Vector3D v2) => v1.X == v2.X && v1.Y == v2.Y && v1.Z == v2.Z;
+        public static bool IsEquals(Vector3D v1, Vector3D v2) => v1.X == v2.X && v1.Y == v2.Y && v1.Z == v2.Z; //without boxing
 
         public static bool IsCollinear(IVector3D<double> v1, IVector3D<double> v2) => v1.X / v2.X == v1.Y / v2.Y && v1.Y / v2.Y == v1.Z / v2.Z;
+
+        public static bool IsCollinear(Vector3D v1, Vector3D v2) => v1.X / v2.X == v1.Y / v2.Y && v1.Y / v2.Y == v1.Z / v2.Z; //without boxing
+
+        public static double GetScalarProduct(IVector3D<double> v1, IVector3D<double> v2) => v1.X * v2.X + v1.Y * v2.Y + v1.Z * v2.Z;
+
+        public static double GetScalarProduct(Vector3D v1, Vector3D v2) => v1.X * v2.X + v1.Y * v2.Y * v2.Y + v1.Z * v2.Z; //without boxing
 
         #endregion
 

@@ -6,7 +6,9 @@ namespace VectorAndPoint
         where T : struct, IComparable, IComparable<T>, IConvertible, IEquatable<T>, IFormattable
     {
 
-        bool IsCollinearWith(IVector2D<T> vector);
+        bool IsCollinearWith(IVector2D<T> other);
+
+        double GetScalarProductWith(IVector2D<T> other);
 
     }
 }

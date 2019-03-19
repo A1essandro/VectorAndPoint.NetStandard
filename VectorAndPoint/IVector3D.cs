@@ -8,5 +8,7 @@ namespace VectorAndPoint
 
         bool IsCollinearWith(IVector3D<T> vector);
 
+        double GetScalarProductWith(IVector3D<T> other);
+
     }
 }
