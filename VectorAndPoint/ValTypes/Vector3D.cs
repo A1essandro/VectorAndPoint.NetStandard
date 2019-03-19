@@ -42,10 +42,34 @@ namespace VectorAndPoint.ValTypes
         /// </summary>
         public double Length => Point3D.GetRangeBetween(new Point3D(X, Y, Z), new Point3D(0, 0, 0));
 
+        /// <summary>
+        /// Vectors collinearity check
+        /// </summary>
+        /// <remarks>
+        /// If structures of type Vector3D are used - better way is call a static method IsCollinear
+        /// </remarks>
+        /// <param name="vector"></param>
+        /// <returns></returns>
         public bool IsCollinearWith(IVector3D<double> vector) => IsCollinear(this, vector);
 
+        /// <summary>
+        /// Get the scalar product of this vector and other
+        /// </summary>
+        /// <remarks>
+        /// If structures of type Vector3D are used - better way is call a static method GetScalarProduct
+        /// </remarks>
+        /// <param name="other"></param>
+        /// <returns></returns>
         public double GetScalarProductWith(IVector3D<double> other) => GetScalarProduct(this, other);
 
+        /// <summary>
+        /// Get the angle between this vector and other in radians
+        /// </summary>
+        /// <remarks>
+        /// If structures of type Vector3D are used - better way is call a static method GetAngleBetween
+        /// </remarks>
+        /// <param name="other"></param>
+        /// <returns></returns>
         public double GetAngleWith(IVector3D<double> other) => GetAngleBetween(this, other);
 
         #region static
@@ -54,19 +78,55 @@ namespace VectorAndPoint.ValTypes
 
         public static bool IsEquals(Vector3D v1, Vector3D v2) => v1.X == v2.X && v1.Y == v2.Y && v1.Z == v2.Z; //without boxing
 
+        /// <summary>
+        /// Vectors collinearity check
+        /// </summary>
+        /// <param name="v1"></param>
+        /// <param name="v2"></param>
+        /// <returns></returns>
         public static bool IsCollinear(IVector3D<double> v1, IVector3D<double> v2) => v1.X / v2.X == v1.Y / v2.Y && v1.Y / v2.Y == v1.Z / v2.Z;
 
+        /// <summary>
+        /// Vectors collinearity check
+        /// </summary>
+        /// <param name="v1"></param>
+        /// <param name="v2"></param>
+        /// <returns></returns>
         public static bool IsCollinear(Vector3D v1, Vector3D v2) => v1.X / v2.X == v1.Y / v2.Y && v1.Y / v2.Y == v1.Z / v2.Z; //without boxing
 
+        /// <summary>
+        /// Get the scalar product of vectors
+        /// </summary>
+        /// <param name="v1"></param>
+        /// <param name="v2"></param>
+        /// <returns></returns>
         public static double GetScalarProduct(IVector3D<double> v1, IVector3D<double> v2) => v1.X * v2.X + v1.Y * v2.Y + v1.Z * v2.Z;
 
+        /// <summary>
+        /// Get the scalar product of vectors
+        /// </summary>
+        /// <param name="v1"></param>
+        /// <param name="v2"></param>
+        /// <returns></returns>
         public static double GetScalarProduct(Vector3D v1, Vector3D v2) => v1.X * v2.X + v1.Y * v2.Y * v2.Y + v1.Z * v2.Z; //without boxing
 
+        /// <summary>
+        /// Get the angle between vectors in radians
+        /// </summary>
+        /// <param name="v1"></param>
+        /// <param name="v2"></param>
+        /// <returns></returns>
         public static double GetAngleBetween(IVector3D<double> v1, IVector3D<double> v2)
         {
             return Math.Acos(GetScalarProduct(v1, v2) / (v1.Length * v2.Length));
         }
 
+        /// <summary>
+        /// Get the angle between vectors in radians
+        /// </summary>
+        /// <param name="v1"></param>
+        /// <param name="v2"></param>
+        /// <returns></returns>
         public static double GetAngleBetween(Vector3D v1, Vector3D v2) //without boxing
         {
             return Math.Acos(GetScalarProduct(v1, v2) / (v1.Length * v2.Length));
