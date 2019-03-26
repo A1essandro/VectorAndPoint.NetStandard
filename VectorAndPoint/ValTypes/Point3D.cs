@@ -55,6 +55,7 @@ namespace VectorAndPoint.ValTypes
 
         public static bool IsEquals(Point p1, Point p2) => p1.X == p2.X && p1.Y == p2.Y;
 
+        [Obsolete("Wrong definition")]
         public static bool IsCollinear(I3D<double> p1, I3D<double> p2) => p1.X / p2.X == p1.Y / p2.Y;
 
         #endregion

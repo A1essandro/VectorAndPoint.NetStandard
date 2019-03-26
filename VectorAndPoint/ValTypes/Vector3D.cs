@@ -86,7 +86,10 @@ namespace VectorAndPoint.ValTypes
         /// <param name="v1"></param>
         /// <param name="v2"></param>
         /// <returns></returns>
-        public static bool IsCollinear(IVector3D<double> v1, IVector3D<double> v2) => v1.X / v2.X == v1.Y / v2.Y && v1.Y / v2.Y == v1.Z / v2.Z;
+        public static bool IsCollinear(IVector3D<double> v1, IVector3D<double> v2)
+        {
+            return Math.Abs(GetAngleBetween(v1, v2)) % Math.PI == 0;
+        }
 
         /// <summary>
         /// Vectors collinearity check
@@ -94,7 +97,10 @@ namespace VectorAndPoint.ValTypes
         /// <param name="v1"></param>
         /// <param name="v2"></param>
         /// <returns></returns>
-        public static bool IsCollinear(Vector3D v1, Vector3D v2) => v1.X / v2.X == v1.Y / v2.Y && v1.Y / v2.Y == v1.Z / v2.Z; //without boxing
+        public static bool IsCollinear(Vector3D v1, Vector3D v2) //without boxing
+        {
+            return Math.Abs(GetAngleBetween(v1, v2)) % Math.PI == 0;
+        }
 
         /// <summary>
         /// Get the scalar product of vectors

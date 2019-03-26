@@ -79,7 +79,12 @@ namespace VectorAndPoint.ValTypes
         /// <param name="v1"></param>
         /// <param name="v2"></param>
         /// <returns></returns>
-        public static bool IsCollinear(IVector2D<double> v1, IVector2D<double> v2) => v1.X / v2.X == v1.Y / v2.Y;
+        public static bool IsCollinear(IVector2D<double> v1, IVector2D<double> v2)
+        {
+            if ((v1.X == 0 && v2.X == 0) || (v1.Y == 0 && v2.Y == 0))
+                return true;
+            return v1.X / v2.X == v1.Y / v2.Y;
+        }
 
         /// <summary>
         /// Vectors collinearity check
@@ -87,7 +92,12 @@ namespace VectorAndPoint.ValTypes
         /// <param name="v1"></param>
         /// <param name="v2"></param>
         /// <returns></returns>
-        public static bool IsCollinear(Vector v1, Vector v2) => v1.X / v2.X == v1.Y / v2.Y; //without boxing
+        public static bool IsCollinear(Vector v1, Vector v2) //without boxing
+        {
+            if ((v1.X == 0 && v2.X == 0) || (v1.Y == 0 && v2.Y == 0))
+                return true;
+            return v1.X / v2.X == v1.Y / v2.Y;
+        }
 
         /// <summary>
         /// Get the scalar product of vectors

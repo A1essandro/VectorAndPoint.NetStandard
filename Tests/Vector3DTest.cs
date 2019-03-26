@@ -35,10 +35,17 @@ namespace Tests
             var v1 = new Vector3D(1, 4, 8);
             var v2 = new Vector3D(-2, -8, -16);
             var v3 = new Vector3D(4, 10, 20);
+            var v4 = new Vector3D(1, 0, 0);
+            var v5 = new Vector3D(1, 1, 0);
+            var v6 = new Vector3D(-1, 0, 0);
+            var v7 = new Vector3D(2, 0, 0);
 
             Assert.True(v1.IsCollinearWith(v2));
             Assert.False(v1.IsCollinearWith(v3));
             Assert.False(v2.IsCollinearWith(v3));
+            Assert.False(v4.IsCollinearWith(v5));
+            Assert.True(v4.IsCollinearWith(v6));
+            Assert.True(v4.IsCollinearWith(v7));
         }
 
         [Fact]
