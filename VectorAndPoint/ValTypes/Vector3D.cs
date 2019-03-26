@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace VectorAndPoint.ValTypes
 {
@@ -6,6 +7,7 @@ namespace VectorAndPoint.ValTypes
     /// <summary>
     /// Represents a displacement in 3D space
     /// </summary>
+    [DebuggerDisplay("({X}, {Y}, {Z})")]
     public struct Vector3D : IVector3D<double>, IEquatable<IVector3D<double>>, IEquatable<Vector3D>
     {
 
@@ -149,7 +151,7 @@ namespace VectorAndPoint.ValTypes
             if (obj == null)
                 return false;
             if (obj is IVector2D<double>) return Equals(obj as IVector2D<double>);
-            if (obj is Vector) return Equals((obj as Vector?).Value);
+            if (obj is Vector3D) return Equals((obj as Vector3D?).Value);
 
             return GetHashCode() == obj.GetHashCode();
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace VectorAndPoint.ValTypes
 {
@@ -6,6 +7,7 @@ namespace VectorAndPoint.ValTypes
     /// <summary>
     /// Represents an x- and y-coordinates in 2D space.
     /// </summary>
+    [DebuggerDisplay("({X}, {Y})")]
     public struct Point : I2D<double>, IEquatable<I2D<double>>, IEquatable<Point>
     {
 
@@ -46,6 +48,7 @@ namespace VectorAndPoint.ValTypes
 
         public static bool IsEquals(Point p1, Point p2) => p1.X == p2.X && p1.Y == p2.Y;
 
+        [Obsolete("Wrong definition")]
         public static bool IsCollinear(I2D<double> p1, I2D<double> p2) => p1.X / p2.X == p1.Y / p2.Y;
 
         #endregion

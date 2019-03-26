@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace VectorAndPoint.ValTypes
 {
@@ -6,6 +7,7 @@ namespace VectorAndPoint.ValTypes
     /// <summary>
     /// Represents an x-, y- and z-coordinates in 3D space.
     /// </summary>
+    [DebuggerDisplay("({X}, {Y}, {Z})")]
     public struct Point3D : I3D<double>, IEquatable<I3D<double>>, IEquatable<Point3D>
     {
 
@@ -72,7 +74,7 @@ namespace VectorAndPoint.ValTypes
             if (obj == null)
                 return false;
             if (obj is I3D<double>) return Equals(obj as I3D<double>);
-            if (obj is Point) return Equals((obj as Point?).Value);
+            if (obj is Point3D) return Equals((obj as Point3D?).Value);
 
             return GetHashCode() == obj.GetHashCode();
         }

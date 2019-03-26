@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace VectorAndPoint.ValTypes
 {
@@ -6,6 +7,7 @@ namespace VectorAndPoint.ValTypes
     /// <summary>
     /// Represents a displacement in 2D space
     /// </summary>
+    [DebuggerDisplay("({X}, {Y})")]
     public struct Vector : IVector2D<double>, IEquatable<IVector2D<double>>, IEquatable<Vector>
     {
 
