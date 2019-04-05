@@ -164,6 +164,10 @@ namespace VectorAndPoint.ValTypes
 
         public override int GetHashCode() => (X.GetHashCode() * 11) ^ (Y.GetHashCode() * 7) ^ (Z.GetHashCode() * 5);
 
+        /// <summary>
+        /// Getting representation of this vector in format (X, Y, Z)
+        /// </summary>
+        /// <returns><see cref="String"/> representation</returns>
         public override string ToString() => $"({X}, {Y}, {Z})";
 
         #endregion
@@ -185,6 +189,10 @@ namespace VectorAndPoint.ValTypes
         public static Vector3D operator *(Vector3D v, int s) => new Vector3D(s * v.X, s * v.Y, s * v.Z);
 
         public static Vector3D operator *(Vector3D v, float s) => new Vector3D(s * v.X, s * v.Y, s * v.Z);
+
+        public static bool operator ==(Vector3D v1, Vector3D v2) => v1.Equals(v2);
+
+        public static bool operator !=(Vector3D v1, Vector3D v2) => !v1.Equals(v2);
 
         #endregion
 

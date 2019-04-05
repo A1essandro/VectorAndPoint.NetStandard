@@ -71,6 +71,10 @@ namespace VectorAndPoint.ValTypes
 
         public override int GetHashCode() => (X.GetHashCode() * 11) ^ (Y.GetHashCode() * 7);
 
+        /// <summary>
+        /// Getting representation of this point in format (X, Y)
+        /// </summary>
+        /// <returns><see cref="String"/> representation</returns>
         public override string ToString() => $"({X}, {Y})";
 
         #endregion
@@ -78,6 +82,10 @@ namespace VectorAndPoint.ValTypes
         #region operators
 
         public static Point operator +(PointInt v, Vector p) => new Point(p.X + v.X, p.Y + v.Y);
+
+        public static bool operator ==(PointInt p1, PointInt p2) => p1.Equals(p2);
+
+        public static bool operator !=(PointInt p1, PointInt p2) => !p1.Equals(p2);
 
         #endregion
 

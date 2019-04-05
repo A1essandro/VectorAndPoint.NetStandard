@@ -82,6 +82,10 @@ namespace VectorAndPoint.ValTypes
 
         public override int GetHashCode() => (X.GetHashCode() * 11) ^ (Y.GetHashCode() * 7) ^ (Z.GetHashCode() * 5);
 
+        /// <summary>
+        /// Getting representation of this point in format (X, Y, Z)
+        /// </summary>
+        /// <returns><see cref="String"/> representation</returns>
         public override string ToString() => $"({X}, {Y}, {Z})";
 
         #endregion
@@ -89,6 +93,11 @@ namespace VectorAndPoint.ValTypes
         #region operators
 
         public static Point3D operator +(PointInt3D v, Vector3D p) => new Point3D(p.X + v.X, p.Y + v.Y, p.Z + v.Z);
+
+
+        public static bool operator ==(PointInt3D p1, PointInt3D p2) => p1.Equals(p2);
+
+        public static bool operator !=(PointInt3D p1, PointInt3D p2) => !p1.Equals(p2);
 
         #endregion
 

@@ -161,6 +161,10 @@ namespace VectorAndPoint.ValTypes
 
         public override int GetHashCode() => (X.GetHashCode() * 11) ^ (Y.GetHashCode() * 7);
 
+        /// <summary>
+        /// Getting representation of this vector in format (X, Y)
+        /// </summary>
+        /// <returns><see cref="String"/> representation</returns>
         public override string ToString() => $"({X}, {Y})";
 
         #endregion
@@ -182,6 +186,10 @@ namespace VectorAndPoint.ValTypes
         public static Vector operator *(Vector v, int s) => new Vector(s * v.X, s * v.Y);
 
         public static Vector operator *(Vector v, float s) => new Vector(s * v.X, s * v.Y);
+
+        public static bool operator ==(Vector v1, Vector v2) => v1.Equals(v2);
+
+        public static bool operator !=(Vector v1, Vector v2) => !v1.Equals(v2);
 
         #endregion
 
