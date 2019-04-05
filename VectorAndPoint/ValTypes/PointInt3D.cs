@@ -82,6 +82,10 @@ namespace VectorAndPoint.ValTypes
 
         public override int GetHashCode() => (X.GetHashCode() * 11) ^ (Y.GetHashCode() * 7) ^ (Z.GetHashCode() * 5);
 
+        /// <summary>
+        /// Getting representation of this point in format (X, Y, Z)
+        /// </summary>
+        /// <returns><see cref="String"/> representation</returns>
         public override string ToString() => $"({X}, {Y}, {Z})";
 
         #endregion
