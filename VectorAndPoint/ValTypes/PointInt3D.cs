@@ -90,6 +90,11 @@ namespace VectorAndPoint.ValTypes
 
         public static Point3D operator +(PointInt3D v, Vector3D p) => new Point3D(p.X + v.X, p.Y + v.Y, p.Z + v.Z);
 
+
+        public static bool operator ==(PointInt3D p1, PointInt3D p2) => p1.Equals(p2);
+
+        public static bool operator !=(PointInt3D p1, PointInt3D p2) => !p1.Equals(p2);
+
         #endregion
 
     }

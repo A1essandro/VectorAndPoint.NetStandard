@@ -17,6 +17,8 @@ namespace Tests
             Assert.Equal(v1, v2);
             Assert.NotEqual(v1, v3);
             Assert.NotEqual(v2, v3);
+            Assert.True(v1 == v2);
+            Assert.False(v1 != v2);
         }
 
         [Fact]

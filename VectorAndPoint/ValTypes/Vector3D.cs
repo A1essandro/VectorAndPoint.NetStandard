@@ -186,6 +186,10 @@ namespace VectorAndPoint.ValTypes
 
         public static Vector3D operator *(Vector3D v, float s) => new Vector3D(s * v.X, s * v.Y, s * v.Z);
 
+        public static bool operator ==(Vector3D v1, Vector3D v2) => v1.Equals(v2);
+
+        public static bool operator !=(Vector3D v1, Vector3D v2) => !v1.Equals(v2);
+
         #endregion
 
     }

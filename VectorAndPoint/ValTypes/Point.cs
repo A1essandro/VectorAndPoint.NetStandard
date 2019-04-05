@@ -83,6 +83,10 @@ namespace VectorAndPoint.ValTypes
 
         public static Point operator +(Point v, Vector p) => new Point(p.X + v.X, p.Y + v.Y);
 
+        public static bool operator ==(Point p1, Point p2) => p1.Equals(p2);
+
+        public static bool operator !=(Point p1, Point p2) => !p1.Equals(p2);
+
         #endregion
 
     }
