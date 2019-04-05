@@ -56,7 +56,7 @@ var vector = new Vector3D(1, 2, 3);
 
 All types overrides method `ToString()` for representating value as `(X, Y)` for two-dimensional and `(X, Y, Z)` for three-dimensional structure.
 
-Comparison via `Equals()` has compare each coordinate or component of both structure.
+Comparison via `Equals()` or operators `==` and `!=` has compare each coordinate or component of both structure.
 
 #### Addition of a point and a vector
 
@@ -72,6 +72,17 @@ var resultVector2 = vector + point; //result is point with coordinates (1.5, 5.1
 `Point` has static method `GetRangeBetween()` for calculation of range between two points.
 
 ### Vectors behaviors
+
+#### Operators
+
+You can multiply a vector by a number to change the length of a vector. You can also add two vectors together.
+
+```cs
+var vector1 = new Vector(1, 2);
+var factor = 3; //int, double or float
+var vector2 = vector1 * factor; //(3, 6)
+var vector1PlusVector2 = vector1 + vector2 //(4, 8)
+```
 
 Scalar product of two vectors:
 
