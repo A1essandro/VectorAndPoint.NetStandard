@@ -16,6 +16,8 @@ namespace Tests
             Assert.Equal(p1, p2);
             Assert.NotEqual(p1, p3);
             Assert.NotEqual(p2, p3);
+            Assert.True(p1 == p2);
+            Assert.False(p1 != p2);
         }
     }
 }

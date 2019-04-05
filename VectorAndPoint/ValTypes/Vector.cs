@@ -187,6 +187,10 @@ namespace VectorAndPoint.ValTypes
 
         public static Vector operator *(Vector v, float s) => new Vector(s * v.X, s * v.Y);
 
+        public static bool operator ==(Vector v1, Vector v2) => v1.Equals(v2);
+
+        public static bool operator !=(Vector v1, Vector v2) => !v1.Equals(v2);
+
         #endregion
 
     }
